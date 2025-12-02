@@ -5,21 +5,30 @@ tags: fpga vga verilog
 categories: demo
 ---
 
-Add a short welcome message or introduction here. Aim to get the viewer interested in what follows! Guideline: 1 or 2 sentences. 
+This is my write up on my SOC FPGA Project. It details the steps taken to display a 640x480 image over VGA using the Basys 3 development board.
 
-I am adding a test sentence here at 13:24 on 03/12/24.
 
 ## **Template VGA Design**
 ### **Project Set-Up**
-Summarise the project set-up and design flow. Include a screenshot of your own set-up, for example see the image of my Project Summary window below. Guideline 1 short paragraph.
 
-<img src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSum.png">
+<img src="docs/assets/images/VGAProject.png">
+
 ### **Template Code**
-Outline the structure and design of the Verilog code templates you were given. What do they do? Include reference to how a VGA interface works. Guideline: 2/3 short paragraphs, consider including screenshot(s).
-### **Simulation**
-Explain the simulation process. Reference any important details, include a well-selected screenshot of the simulation. Guideline: 1/2 short paragraphs.
+
+For the project we received a project template. This tempate included all the files needed to display colour strips on the monitor. The template included three files.
+ - VGATop.v
+    - The top level verilog file. This calls all the other modules and connects the signals in between them.
+ - VGASync.v
+    - Creates the signals for VGA to work. A horizonal sync and verital sync signals are generated here. These signals are directly sent to the monitor. A pulse on the horisontal sync signifys the end of the line, while a pulse on the vertical sync means the end of a full frame.
+ - VGAColourCycle.v
+    - Generates the colour data for displaying on the screen. As the name suggests it cycles through a few colors.
+ - Basys3_Master.xdc
+    - Constraints file for the board. Needed to set up the switch for the reset, the outputs for the VGA connector and for the clock.
+ - Testbench.v
+    - Test bench used to see if the design works correctly.
+
 ### **Synthesis**
-Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
+Synthesis and Im is the process of converting the verilog implementation
 ### **Demonstration**
 Perhaps add a picture of your demo. Guideline: 1/2 sentences.
 
