@@ -28,11 +28,33 @@ For the project we received a project template. This tempate included all the fi
     - Test bench used to see if the design works correctly.
 
 ### **Synthesis**
-Synthesis and Im is the process of converting the verilog implementation
+Synthesis is the process of converting the high level code to logic that the FPGA can implement. This process decides on what compoents on the FPGA to use such as DSP's or block ram.
+
+Implementation is responsible for picking the hardware to use on the board and routing signals.
+
 ### **Demonstration**
-Perhaps add a picture of your demo. Guideline: 1/2 sentences.
+The template code cycles through a few colours.
 
 ## **My VGA Design Edit**
+My idea was to use the memory on the FPGA to store pixel data of an image. It would take the rows and columns as inputs and output the 12 bit colour value. 4 bits each for red, blue and green. The idea is not too complex as at its core its just a very large look up table.
+
+
+I researched how to load large ammounts of data into a verilog file and found the `$readmemh` function this allowed the reading in of a memory file into memory.
+
+But first I needed a file to load. So I created a program to create a memory file filled with one colour value. And then manually changed a few values to a different colour. This worked and producded the following image
+
+<img src="docs/assets/images/colourfill.jpg">
+
+I knew it was working as I could change values in the memory file and the changes would be reflected on the screen.
+
+
+
+
+
+
+
+
+
 Introduce your own design idea. Consider how complex/achievabble this might be or otherwise. Reference any research you do online (use hyperlinks).
 ### **Code Adaptation**
 Briefly show how you changed the template code to display a different image. Demonstrate your understanding. Guideline: 1-2 short paragraphs.
