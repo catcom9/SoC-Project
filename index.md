@@ -39,13 +39,25 @@ The template code cycles through a few colours.
 My idea was to use the memory on the FPGA to store pixel data of an image. It would take the rows and columns as inputs and output the 12 bit colour value. 4 bits each for red, blue and green. The idea is not too complex as at its core its just a very large look up table.
 
 
-I researched how to load large ammounts of data into a verilog file and found the `$readmemh` function this allowed the reading in of a memory file into memory.
+I researched how to load large ammounts of data into a verilog file and found the `$readmemh` function this allowed the reading in of a file into memory.
+https://projectf.io/posts/initialize-memory-in-verilog/
+
 
 But first I needed a file to load. So I created a program to create a memory file filled with one colour value. And then manually changed a few values to a different colour. This worked and producded the following image
 
 <img src="docs/assets/images/colourfill.jpg">
 
-I knew it was working as I could change values in the memory file and the changes would be reflected on the screen.
+
+### **Image Preprocessing**
+
+A image has to be converted before it can be used with vivado. To do this I used a combination of GIMP and a few programs I devloped. 
+
+#### **Orignal Image**
+<img src="docs/assets/images/Org.jpg">
+
+
+#### **Rotated and Reducded Colours**
+<img src="docs/assets/images/pre.ppm">
 
 
 
