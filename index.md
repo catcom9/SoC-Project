@@ -96,7 +96,7 @@ And this is the RTL output.
 After getting the project working I went back and separated out the code. This turned out to be the issue on why it wasn't inferring BRAM.
 
 
-<img src="docs/assets/images/Synth_util_BRAM.png">
+<img src="docs/assets/images/Synth_utli_BRAM.png">
 
 As you can see the BRAM is being used.
 
